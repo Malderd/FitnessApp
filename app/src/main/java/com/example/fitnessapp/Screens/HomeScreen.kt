@@ -34,7 +34,7 @@ import com.example.fitnessapp.ui.theme.HomeTitleStyle
 
 @Composable
 fun HomeScreen(
-    onTrainingClick: () -> Unit = {},
+    onTrainingClick: (Int) -> Unit = {},
     onSeeAll: () -> Unit = {},
     onNavigate: (String) -> Unit = {}
 ) {
@@ -46,7 +46,9 @@ fun HomeScreen(
             modifier = Modifier.padding(top = 25.dp)
         )
 
-        Card(Modifier.fillMaxWidth().padding(top = 18.dp),
+        Card(Modifier
+            .fillMaxWidth()
+            .padding(top = 18.dp),
             shape = RoundedCornerShape(18.dp),
             colors = CardDefaults.cardColors(containerColor = colorResource(R.color.promo_green))
         ) {
@@ -67,7 +69,9 @@ fun HomeScreen(
             }
         }
 
-        Row(Modifier.fillMaxWidth().padding(top = 18.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(Modifier
+            .fillMaxWidth()
+            .padding(top = 18.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
             Text(
                 text = stringResource(R.string.home_upcoming_trainings),
                 style = HomeSectionTitleStyle,
@@ -84,7 +88,9 @@ fun HomeScreen(
             time = stringResource(R.string.training_strength_time),
             room = stringResource(R.string.training_strength_room),
             image = painterResource(R.drawable.strength_training),
-            onClick = onTrainingClick
+            onClick = {
+                onTrainingClick(1)
+            }
         )
 
         // Вторая тренировка
@@ -93,7 +99,9 @@ fun HomeScreen(
             time = stringResource(R.string.training_yoga_time),
             room = stringResource(R.string.training_yoga_room),
             image = painterResource(R.drawable.yoga),
-            onClick = onTrainingClick
+            onClick = {
+                onTrainingClick(2)
+            }
         )
 
     }

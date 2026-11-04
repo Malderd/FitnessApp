@@ -40,7 +40,11 @@ fun AppNavHost(navController: NavHostController) {
         }
         composable(Destination.Home.route) {
             HomeScreen(
-                { navController.navigate(Destination.Booking.createRoute(1)) },
+                { trainingId ->
+                    navController.navigate(
+                        Destination.Booking.createRoute(trainingId)
+                    )
+                },
                 { navController.navigate(Destination.Schedule.route) },
                 { navController.goTopLevel(it) })
         }
@@ -49,14 +53,14 @@ fun AppNavHost(navController: NavHostController) {
 //                { navController.navigate(Destination.Booking.createRoute(it)) },
 //                { navController.goTopLevel(it) })
 //        }
-//        composable(Destination.Booking.route, arguments = listOf(navArgument("trainingId") { type = NavType.IntType })) { entry ->
-//            BookingScreen(
-//                entry.arguments?.getInt("trainingId") ?: 1,
-//                { navController.popBackStack() },
-//                {
-//                    navController.navigate(Destination.Schedule.route) { popUpTo(Destination.Home.route) }
-//                })
-//        }
+        composable(Destination.Booking.route, arguments = listOf(navArgument("trainingId") { type = NavType.IntType })) { entry ->
+            BookingScreen(
+                entry.arguments?.getInt("trainingId"),
+                { navController.popBackStack() },
+                {
+                    navController.navigate(Destination.Schedule.route) { popUpTo(Destination.Home.route) }
+                })
+        }
 //        composable(Destination.Chat.route) { ChatScreen { navController.goTopLevel(it) } }
 //        composable(Destination.Profile.route) { ProfileScreen { navController.goTopLevel(it) } }
     }

@@ -29,6 +29,7 @@
     <string name="home_promo_subtitle">Тренируйся в удобном темпе</string>
     <string name="home_upcoming_trainings">Ближайшие тренировки</string>
     <string name="see_all">Все</string>
+
     <string name="training_strength">Силовая тренировка</string>
     <string name="training_strength_time">5 ноября • 18:00</string>
     <string name="training_strength_room">Зал №1 • 5 мест</string>
@@ -36,5 +37,28 @@
     <string name="training_yoga_time">6 ноября • 09:00</string>
     <string name="training_yoga_room">Зал №2 • 8 мест</string>
     <string name="training_card_arrow">›</string>
+
+    <string name="training_strength">Силовая тренировка</string>
+    <string name="training_yoga">Йога</string>
+
+    <string name="training_strength_time">5 ноября  18:00</string>
+    <string name="training_yoga_time">6 ноября  09:00</string>
+
+    <string name="training_strength_room">Зал №1  5 мест</string>
+    <string name="training_yoga_room">Зал №2  8 мест</string>
+    <string name="training_card_arrow">›</string>
+
+    <string name="booking_strength_room">Зал №1</string>
+    <string name="booking_yoga_room">Зал №2</string>
+
+    <string name="training_strength_trainer">Алексей Смирнов</string>
+    <string name="training_yoga_trainer">Тренер уточняется</string>
+
+    <string name="training_strength_description">Эффективная тренировка для развития силы и выносливости.</string>
+    <string name="training_yoga_description">Спокойная тренировка для развития гибкости, баланса и расслабления.</string>
+
+    <string name="booking_description">Описание</string>
+    <string name="booking_button">Записаться</string>
+    <string name="booking_trainer_prefix">Тренер: %1$s</string>
 
 </resources>
