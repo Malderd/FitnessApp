@@ -70,7 +70,7 @@ fun WelcomeScreen(
             Text(
                 text = stringResource(R.string.welcome_title),
                 style = WelcomeTitleStyle,
-                color = colorResource(R.color.welcome_text)
+                color = colorResource(R.color.text_white)
             )
 
             Spacer(Modifier.height(5.dp))
@@ -78,7 +78,7 @@ fun WelcomeScreen(
             Text(
                 text = stringResource(R.string.welcome_subtitle),
                 style = WelcomeSubtitleStyle,
-                color = colorResource(R.color.welcome_text)
+                color = colorResource(R.color.text_white)
             )
 
             Spacer(Modifier.height(50.dp))
@@ -87,8 +87,8 @@ fun WelcomeScreen(
                 onLogin, Modifier.fillMaxWidth().height(52.dp),
                 shape = RoundedCornerShape(14.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(R.color.welcome_button),
-                    contentColor = colorResource(R.color.welcome_text)
+                    containerColor = colorResource(R.color.primary),
+                    contentColor = colorResource(R.color.text_white)
                 )
             )
             {
@@ -106,7 +106,7 @@ fun WelcomeScreen(
             {
                 Text(text = stringResource(R.string.register_button),
                     style = WelcomeButtonStyle,
-                    color = colorResource(R.color.welcome_text)
+                    color = colorResource(R.color.text_white)
                 )
             }
         }

@@ -48,17 +48,22 @@ val WelcomeButtonStyle = TextStyle(
     fontWeight = FontWeight.Bold
 )
 
-val LoginTitleStyle = TextStyle(
+val AuthTitleStyle = TextStyle(
     fontSize = 28.sp,
     fontWeight = FontWeight.Bold
 )
 
-val LoginSubtitleStyle = TextStyle(
+val AuthSubtitleStyle = TextStyle(
     fontSize = 16.sp,
     fontWeight = FontWeight.Normal
 )
 
-val LoginButtonStyle = TextStyle(
+val AuthButtonStyle = TextStyle(
     fontSize = 16.sp,
     fontWeight = FontWeight.Bold
+)
+
+val AuthBackStyle = TextStyle(
+    fontSize = 14.sp,
+    fontWeight = FontWeight.Normal
 )

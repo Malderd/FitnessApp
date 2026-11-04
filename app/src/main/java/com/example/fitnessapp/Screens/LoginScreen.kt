@@ -37,10 +37,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.fitnessapp.R
 import com.example.fitnessapp.ui.theme.FitnessAppTheme
-import com.example.fitnessapp.ui.theme.LoginTitleStyle
-import com.example.fitnessapp.ui.theme.LoginSubtitleStyle
-import com.example.fitnessapp.ui.theme.LoginButtonStyle
-
+import com.example.fitnessapp.ui.theme.AuthTitleStyle
+import com.example.fitnessapp.ui.theme.AuthSubtitleStyle
+import com.example.fitnessapp.ui.theme.AuthButtonStyle
+import com.example.fitnessapp.ui.theme.AuthBackStyle
 @Composable
 fun LoginScreen(
     onBack: () -> Unit = {},
@@ -51,14 +51,14 @@ fun LoginScreen(
     var password by remember { mutableStateOf("") }
 
     Box(
-        modifier = Modifier.fillMaxSize().background(colorResource(R.color.login_background)),
+        modifier = Modifier.fillMaxSize().background(colorResource(R.color.background)),
         contentAlignment = Alignment.Center
     ) {
         Card(
             modifier = Modifier.fillMaxWidth().padding(20.dp),
             shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(
-                containerColor = colorResource(R.color.login_card)
+                containerColor = colorResource(R.color.surface)
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 6.dp
@@ -75,8 +75,9 @@ fun LoginScreen(
                 ) {
                     TextButton(onClick = onBack) {
                         Text(
-                            text = stringResource(R.string.login_back),
-                            color = colorResource(R.color.login_button)
+                            text = stringResource(R.string.back),
+                            color = colorResource(R.color.text_primary),
+                            style = AuthBackStyle
                         )
                     }
                 }
@@ -91,21 +92,21 @@ fun LoginScreen(
 
                 Text(
                     text = stringResource(R.string.login_title),
-                    style = LoginTitleStyle,
-                    color = colorResource(R.color.login_text)
+                    style = AuthTitleStyle,
+                    color = colorResource(R.color.text_primary)
                 )
 
                 Text(
                     text = stringResource(R.string.login_subtitle),
-                    style = LoginSubtitleStyle,
-                    color = colorResource(R.color.login_secondary_text)
+                    style = AuthSubtitleStyle,
+                    color = colorResource(R.color.text_secondary)
                 )
 
                 Spacer(Modifier.height(8.dp))
 
                 OutlinedTextField(value = email, onValueChange = { email = it },
                     label = {
-                        Text(stringResource(R.string.login_email))
+                        Text(stringResource(R.string.email))
                     },
                     modifier = Modifier.fillMaxWidth(), singleLine = true, shape = RoundedCornerShape(14.dp),
                     keyboardOptions = KeyboardOptions(
@@ -116,7 +117,7 @@ fun LoginScreen(
                 OutlinedTextField(
                     value = password, onValueChange = { password = it },
                     label = {
-                        Text(stringResource(R.string.login_password))
+                        Text(stringResource(R.string.password))
                     },
                     modifier = Modifier.fillMaxWidth(), singleLine = true,
                     shape = RoundedCornerShape(14.dp), visualTransformation = PasswordVisualTransformation()
@@ -128,24 +129,24 @@ fun LoginScreen(
                     onClick = onLoginSuccess, modifier = Modifier.fillMaxWidth().height(52.dp),
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = colorResource(R.color.login_button)
+                        containerColor = colorResource(R.color.primary)
                     )
                 ) {
                     Text(
                         text = stringResource(R.string.login_button),
-                        style = LoginButtonStyle
+                        style = AuthButtonStyle
                     )
                 }
 
                 TextButton(onClick = onRegister) {
                     Text(
                         text = stringResource(R.string.login_no_account),
-                        color = colorResource(R.color.login_secondary_text)
+                        color = colorResource(R.color.text_secondary)
                     )
 
                     Text(
-                        text = " " + stringResource(R.string.login_register),
-                        color = colorResource(R.color.login_button)
+                        text = " " + stringResource(R.string.register_button),
+                        color = colorResource(R.color.primary)
                     )
                 }
             }

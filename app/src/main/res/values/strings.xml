@@ -1,16 +1,22 @@
 <resources>
     <string name="app_name">FitLife</string>
     <string name="logo_description">Логотип FitLife</string>
+    <string name="back">← Назад</string>
+    <string name="email">Email</string>
+    <string name="password">Пароль</string>
+    <string name="login_button">Войти</string>
+    <string name="register_button">Зарегистрироваться</string>
+
     <string name="welcome_background_description">Фон фитнес-приложения</string>
     <string name="welcome_title">FitLife</string>
     <string name="welcome_subtitle">Твой фитнес рядом</string>
-    <string name="login_button">Войти</string>
-    <string name="register_button">Зарегистрироваться</string>
-    <string name="login_back">← Назад</string>
+
     <string name="login_title">Вход в аккаунт</string>
     <string name="login_subtitle">С возвращением!</string>
-    <string name="login_email">Email</string>
-    <string name="login_password">Пароль</string>
     <string name="login_no_account">Нет аккаунта?</string>
-    <string name="login_register">Зарегистрироваться</string>
+
+    <string name="register_title">Регистрация</string>
+    <string name="register_subtitle">Создайте аккаунт</string>
+    <string name="register_name">ФИО</string>
+
 </resources>
