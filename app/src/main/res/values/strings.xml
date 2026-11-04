@@ -19,4 +19,9 @@
     <string name="register_subtitle">Создайте аккаунт</string>
     <string name="register_name">ФИО</string>
 
+    <string name="nav_home">Главная</string>
+    <string name="nav_schedule">Расписание</string>
+    <string name="nav_chat">ИИ-чат</string>
+    <string name="nav_profile">Профиль</string>
+
 </resources>
