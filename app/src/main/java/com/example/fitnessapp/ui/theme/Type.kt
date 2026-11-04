@@ -32,3 +32,38 @@ val Typography = Typography(
     )
     */
 )
+
+val WelcomeTitleStyle = TextStyle(
+    fontSize = 42.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val WelcomeSubtitleStyle = TextStyle(
+    fontSize = 18.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val WelcomeButtonStyle = TextStyle(
+    fontSize = 16.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val AuthTitleStyle = TextStyle(
+    fontSize = 28.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val AuthSubtitleStyle = TextStyle(
+    fontSize = 16.sp,
+    fontWeight = FontWeight.Normal
+)
+
+val AuthButtonStyle = TextStyle(
+    fontSize = 16.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val AuthBackStyle = TextStyle(
+    fontSize = 14.sp,
+    fontWeight = FontWeight.Normal
+)
