@@ -36,12 +36,7 @@ fun AppNavHost(navController: NavHostController) {
         composable(Destination.Register.route) {
             RegisterScreen(
                 { navController.popBackStack() },
-                { navController.navigate(Destination.Home.route) {
-                    popUpTo(Destination.Welcome.route) {
-                        inclusive = true
-                    }
-                }
-            })
+                { navController.navigate(Destination.Login.route)})
         }
 //        composable(Destination.Home.route) {
 //            HomeScreen(
