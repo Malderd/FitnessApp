@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -60,7 +61,7 @@ fun WelcomeScreen(
             Image(
                 painter = painterResource(id = R.drawable.dumbbell_logo),
                 contentDescription = stringResource(
-                    R.string.welcome_logo_description
+                    R.string.logo_description
                 ),
                 modifier = Modifier.size(135.dp),
                 contentScale = ContentScale.Fit
@@ -84,7 +85,11 @@ fun WelcomeScreen(
 
             Button(
                 onLogin, Modifier.fillMaxWidth().height(52.dp),
-                shape = RoundedCornerShape(14.dp)
+                shape = RoundedCornerShape(14.dp),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colorResource(R.color.welcome_button),
+                    contentColor = colorResource(R.color.welcome_text)
+                )
             )
             {
                 Text(text = stringResource(R.string.login_button),

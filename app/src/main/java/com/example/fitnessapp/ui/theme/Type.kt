@@ -38,14 +38,27 @@ val WelcomeTitleStyle = TextStyle(
     fontWeight = FontWeight.Bold
 )
 
-// Стиль подзаголовка
 val WelcomeSubtitleStyle = TextStyle(
     fontSize = 18.sp,
     fontWeight = FontWeight.Bold
 )
 
-// Стиль текста кнопок
 val WelcomeButtonStyle = TextStyle(
+    fontSize = 16.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val LoginTitleStyle = TextStyle(
+    fontSize = 28.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val LoginSubtitleStyle = TextStyle(
+    fontSize = 16.sp,
+    fontWeight = FontWeight.Normal
+)
+
+val LoginButtonStyle = TextStyle(
     fontSize = 16.sp,
     fontWeight = FontWeight.Bold
 )
