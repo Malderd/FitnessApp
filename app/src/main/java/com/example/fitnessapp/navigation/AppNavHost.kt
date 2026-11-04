@@ -38,12 +38,12 @@ fun AppNavHost(navController: NavHostController) {
                 { navController.popBackStack() },
                 { navController.navigate(Destination.Login.route)})
         }
-//        composable(Destination.Home.route) {
-//            HomeScreen(
-//                { navController.navigate(Destination.Booking.createRoute(1)) },
-//                { navController.navigate(Destination.Schedule.route) },
-//                { navController.goTopLevel(it) })
-//        }
+        composable(Destination.Home.route) {
+            HomeScreen(
+                { navController.navigate(Destination.Booking.createRoute(1)) },
+                { navController.navigate(Destination.Schedule.route) },
+                { navController.goTopLevel(it) })
+        }
 //        composable(Destination.Schedule.route) {
 //            ScheduleScreen(
 //                { navController.navigate(Destination.Booking.createRoute(it)) },

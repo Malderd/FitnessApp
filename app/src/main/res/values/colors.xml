@@ -7,8 +7,13 @@
     <color name="text_primary">#243328</color>
     <color name="text_secondary">#718071</color>
     <color name="text_white">#FFFFFF</color>
+    <color name="text_dark">#243328</color>
+    <color name="text_muted">#718071</color>
 
     <color name="field_background">#F7F9F7</color>
 
     <color name="welcome_overlay">#000000</color>
+
+    <color name="light_green">#DCEBDD</color>
+    <color name="promo_green">#1B5E20</color>
 </resources>
