@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">FitnessApp</string>
+    <string name="app_name">FitLife</string>
+    <string name="welcome_logo_description">Логотип гири</string>
+    <string name="welcome_background_description">Фон фитнес-приложения</string>
+    <string name="welcome_title">FitLife</string>
+    <string name="welcome_subtitle">Твой фитнес рядом</string>
+    <string name="login_button">Войти</string>
+    <string name="register_button">Зарегистрироваться</string>
 </resources>
