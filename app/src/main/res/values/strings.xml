@@ -54,4 +54,19 @@
     <string name="chat_input_hint">Написать сообщение...</string>
     <string name="chat_send_button">➤</string>
 
+    <string name="profile_title">Профиль</string>
+    <string name="profile_name">Константин Куликов</string>
+    <string name="profile_email">Kosty-k1980@list.ru</string>
+    <string name="profile_personal_data">Личные данные</string>
+    <string name="profile_subscriptions">Мои абонементы</string>
+    <string name="profile_visit_history">История посещений</string>
+    <string name="profile_notifications">Уведомления</string>
+    <string name="profile_logout">Выйти из аккаунта</string>
+    <string name="profile_avatar_description">Аватар пользователя</string>
+    <string name="profile_personal_data_description">Иконка личных данных</string>
+    <string name="profile_subscriptions_description">Иконка абонементов</string>
+    <string name="profile_visit_history_description">Иконка истории посещений</string>
+    <string name="profile_notifications_description">Иконка уведомлений</string>
+    <string name="profile_logout_description">Иконка выхода из аккаунта</string>
+
 </resources>

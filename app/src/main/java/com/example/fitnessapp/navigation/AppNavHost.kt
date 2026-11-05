@@ -50,7 +50,7 @@ fun AppNavHost(navController: NavHostController) {
         composable(Destination.Schedule.route) {
             ScheduleScreen(
                 { navController.navigate(
-                        Destination.Booking.createRoute(it)
+                    Destination.Booking.createRoute(it)
                     )
                 },
                 { navController.goTopLevel(it) })
@@ -64,8 +64,8 @@ fun AppNavHost(navController: NavHostController) {
                     navController.navigate(Destination.Schedule.route) { popUpTo(Destination.Home.route) }
                 })
         }
-//        composable(Destination.Chat.route) { ChatScreen { navController.goTopLevel(it) } }
-//        composable(Destination.Profile.route) { ProfileScreen { navController.goTopLevel(it) } }
+       composable(Destination.Chat.route) { ChatScreen { navController.goTopLevel(it) } }
+       composable(Destination.Profile.route) { ProfileScreen { navController.goTopLevel(it) } }
     }
 }
 private fun NavHostController.goTopLevel(route: String) {
