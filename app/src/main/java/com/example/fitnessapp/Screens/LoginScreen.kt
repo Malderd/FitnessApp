@@ -43,7 +43,6 @@ import com.example.fitnessapp.ui.theme.AuthButtonStyle
 import com.example.fitnessapp.ui.theme.AuthBackStyle
 @Composable
 fun LoginScreen(
-    onBack: () -> Unit = {},
     onLoginSuccess: () -> Unit = {},
     onRegister: () -> Unit = {}
 ) {
@@ -69,19 +68,6 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Box(
-                    modifier = Modifier.fillMaxWidth(),
-                    contentAlignment = Alignment.CenterStart
-                ) {
-                    TextButton(onClick = onBack) {
-                        Text(
-                            text = stringResource(R.string.back),
-                            color = colorResource(R.color.text_primary),
-                            style = AuthBackStyle
-                        )
-                    }
-                }
-
                 Image(
                     painter = painterResource(R.drawable.dumbbell_logo),
                     contentDescription = stringResource(

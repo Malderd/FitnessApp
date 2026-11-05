@@ -14,9 +14,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
@@ -32,6 +36,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.fitnessapp.navigation.BottomNavigationBar
@@ -42,18 +47,37 @@ import com.example.fitnessapp.ui.theme.TrainingTitleStyle
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun PageScaffold(title: String? = null, currentRoute: String, onNavigate: (String) -> Unit, content: @Composable ColumnScope.() -> Unit) {
+fun PageScaffold(
+    title: String? = null,
+    currentRoute: String,
+    onNavigate: (String) -> Unit,
+    onBack: (() -> Unit)? = null,
+    content: @Composable ColumnScope.() -> Unit
+) {
     Scaffold(
         containerColor = colorResource(R.color.background),
-        topBar = { if (title != null) TopAppBar(title = {
-            Text(
-                text = title,
-                style = MaterialTheme.typography.titleLarge.copy(
-                    fontWeight = FontWeight.Bold
-                )
-            )},
-            colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(R.color.background))
-        ) },
+        topBar = { if (title != null) {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = title,
+                        style = MaterialTheme.typography.titleLarge.copy(
+                            fontWeight = FontWeight.Bold,
+                        )
+                    )},
+                navigationIcon = {
+                    if (onBack != null) {
+                        IconButton(onClick = onBack) {
+                            Icon(
+                                imageVector = Icons.Default.ArrowBack,
+                                contentDescription = "Назад"
+                            )
+                        }
+                    }
+                },
+                colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(R.color.background))
+            )
+        } },
         bottomBar = { BottomNavigationBar(currentRoute, onNavigate) }
     ) { padding ->
         Column(Modifier.fillMaxSize().padding(padding).padding(horizontal = 18.dp), content = content)

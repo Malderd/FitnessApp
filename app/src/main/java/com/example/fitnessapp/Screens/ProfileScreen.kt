@@ -26,7 +26,8 @@ import com.example.fitnessapp.ui.theme.FitnessAppTheme
 
 @Composable
 fun ProfileScreen(
-    onNavigate: (String) -> Unit = {}
+    onNavigate: (String) -> Unit = {},
+    onLogout: () -> Unit = {}
 ) {
     PageScaffold(title = stringResource(R.string.profile_title), Destination.Profile.route, onNavigate) {
         Column(Modifier.fillMaxWidth().padding(vertical = 20.dp),
@@ -63,7 +64,9 @@ fun ProfileScreen(
                         stringResource(R.string.profile_personal_data_description),
                     )
                 },
-                onClick = {}
+                onClick = {
+                    onNavigate(Destination.PersonalData.route)
+                }
             )
 
             ProfileMenuItem(
@@ -74,7 +77,9 @@ fun ProfileScreen(
                         stringResource(R.string.profile_subscriptions_description),
                     )
                 },
-                onClick = {}
+                onClick = {
+                    onNavigate(Destination.Subscriptions.route)
+                }
             )
 
             ProfileMenuItem(
@@ -85,7 +90,9 @@ fun ProfileScreen(
                         contentDescription = stringResource(R.string.profile_visit_history_description),
                     )
                 },
-                onClick = {}
+                onClick = {
+                    onNavigate(Destination.VisitHistory.route)
+                }
             )
 
             ProfileMenuItem(
@@ -96,7 +103,9 @@ fun ProfileScreen(
                         contentDescription = stringResource(R.string.profile_notifications_description),
                     )
                 },
-                onClick = {}
+                onClick = {
+                    onNavigate(Destination.Notifications.route)
+                }
             )
 
             ProfileMenuItem(
@@ -107,7 +116,7 @@ fun ProfileScreen(
                         contentDescription = stringResource(R.string.profile_logout_description),
                     )
                 },
-                onClick = {}
+                onClick = onLogout
             )
         }
     }

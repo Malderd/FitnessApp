@@ -10,9 +10,13 @@ import com.example.fitnessapp.Screens.BookingScreen
 import com.example.fitnessapp.Screens.ChatScreen
 import com.example.fitnessapp.Screens.HomeScreen
 import com.example.fitnessapp.Screens.LoginScreen
+import com.example.fitnessapp.Screens.NotificationsScreen
+import com.example.fitnessapp.Screens.PersonalDataScreen
 import com.example.fitnessapp.Screens.ProfileScreen
 import com.example.fitnessapp.Screens.RegisterScreen
 import com.example.fitnessapp.Screens.ScheduleScreen
+import com.example.fitnessapp.Screens.SubscriptionsScreen
+import com.example.fitnessapp.Screens.VisitHistoryScreen
 import com.example.fitnessapp.Screens.WelcomeScreen
 
 @Composable
@@ -25,13 +29,18 @@ fun AppNavHost(navController: NavHostController) {
         }
         composable(Destination.Login.route) {
             LoginScreen(
-                { navController.popBackStack() },
-                { navController.navigate(Destination.Home.route) {
-                    popUpTo(Destination.Welcome.route) {
-                        inclusive = true
+                onLoginSuccess = {
+                    navController.navigate(Destination.Home.route) {
+                        popUpTo(Destination.Welcome.route) {
+                            inclusive = true
+                        }
+                        launchSingleTop = true
                     }
+                },
+                onRegister = {
+                    navController.navigate(Destination.Register.route)
                 }
-            }, { navController.navigate(Destination.Register.route) })
+            )
         }
         composable(Destination.Register.route) {
             RegisterScreen(
@@ -64,8 +73,54 @@ fun AppNavHost(navController: NavHostController) {
                     navController.navigate(Destination.Schedule.route) { popUpTo(Destination.Home.route) }
                 })
         }
-       composable(Destination.Chat.route) { ChatScreen { navController.goTopLevel(it) } }
-       composable(Destination.Profile.route) { ProfileScreen { navController.goTopLevel(it) } }
+       composable(Destination.Chat.route) {
+           ChatScreen {
+               navController.goTopLevel(it)
+           }
+       }
+
+       composable(Destination.Profile.route) {
+           ProfileScreen( {
+               navController.navigate(it)
+           },
+               onLogout = {
+                   navController.navigate(Destination.Login.route) {
+                       popUpTo(Destination.Home.route) {
+                           inclusive = true
+                       }
+                       launchSingleTop = true
+                   }
+               }
+           )
+       }
+
+        composable(Destination.PersonalData.route) {
+            PersonalDataScreen(
+                onNavigate = { navController.goTopLevel(it) },
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Destination.Subscriptions.route) {
+            SubscriptionsScreen(
+                onNavigate = { navController.goTopLevel(it) },
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Destination.VisitHistory.route) {
+            VisitHistoryScreen(
+                onNavigate = { navController.goTopLevel(it) },
+                onBack = { navController.popBackStack() }
+            )
+        }
+
+        composable(Destination.Notifications.route) {
+            NotificationsScreen(
+                onNavigate = { navController.goTopLevel(it) },
+                onBack = { navController.popBackStack() }
+            )
+        }
     }
 }
 private fun NavHostController.goTopLevel(route: String) {

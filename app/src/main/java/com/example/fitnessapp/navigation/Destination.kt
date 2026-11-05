@@ -11,4 +11,8 @@ sealed class Destination(val route: String) {
     }
     data object Chat : Destination("chat")
     data object Profile : Destination("profile")
+    data object PersonalData : Destination("personal_data")
+    data object Subscriptions : Destination("subscriptions")
+    data object VisitHistory : Destination("visit_history")
+    data object Notifications : Destination("notifications")
 }

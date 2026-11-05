@@ -69,4 +69,19 @@
     <string name="profile_notifications_description">Иконка уведомлений</string>
     <string name="profile_logout_description">Иконка выхода из аккаунта</string>
 
+    <string name="personal_data_header">Информация о пользователе</string>
+    <string name="personal_data_name">ФИО</string>
+    <string name="personal_data_email">Электронная почта</string>
+    <string name="personal_data_phone">Номер телефона</string>
+    <string name="personal_data_phone_empty">Не указан</string>
+
+    <string name="subscriptions_empty_title">У вас пока нет абонементов</string>
+    <string name="subscriptions_empty_description">Здесь будут отображаться ваши активные абонементы и информация об их сроке действия.</string>
+
+    <string name="history_empty_title">История пока пуста</string>
+    <string name="history_empty_description">Здесь будут отображаться ваши посещения фитнес-центров и тренировок.</string>
+
+    <string name="notifications_empty_title">Уведомлений пока нет</string>
+    <string name="notifications_empty_description">Здесь будут появляться сообщения о тренировках, бронированиях и обновлениях.</string>
+
 </resources>
