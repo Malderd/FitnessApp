@@ -40,18 +40,22 @@ fun AppNavHost(navController: NavHostController) {
         }
         composable(Destination.Home.route) {
             HomeScreen(
-                { trainingId ->
-                    navController.navigate(
-                        Destination.Booking.createRoute(trainingId)
+                { navController.navigate(
+                        Destination.Booking.createRoute(it)
                     )
                 },
                 { navController.goTopLevel(it) })
         }
-//        composable(Destination.Schedule.route) {
-//            ScheduleScreen(
-//                { navController.navigate(Destination.Booking.createRoute(it)) },
-//                { navController.goTopLevel(it) })
-//        }
+
+        composable(Destination.Schedule.route) {
+            ScheduleScreen(
+                { navController.navigate(
+                        Destination.Booking.createRoute(it)
+                    )
+                },
+                { navController.goTopLevel(it) })
+        }
+
         composable(Destination.Booking.route, arguments = listOf(navArgument("trainingId") { type = NavType.IntType })) { entry ->
             BookingScreen(
                 entry.arguments?.getInt("trainingId"),

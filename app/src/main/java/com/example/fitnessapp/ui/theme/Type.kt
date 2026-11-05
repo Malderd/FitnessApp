@@ -93,7 +93,6 @@ val TrainingTitleStyle = TextStyle(
     fontWeight = FontWeight.Medium
 )
 
-// Время и информация о зале
 val TrainingDetailsStyle = TextStyle(
     fontSize = 13.sp,
     fontWeight = FontWeight.Normal
@@ -102,6 +101,18 @@ val TrainingDetailsStyle = TextStyle(
 val TrainingArrowStyle = TextStyle(
     fontSize = 28.sp,
     fontWeight = FontWeight.Normal
+)
+
+// Заголовок выбранной даты
+val ScheduleDateTitleStyle = TextStyle(
+    fontSize = 18.sp,
+    fontWeight = FontWeight.SemiBold
+)
+
+// Даты в горизонтальном списке
+val ScheduleDayStyle = TextStyle(
+    fontSize = 15.sp,
+    fontWeight = FontWeight.Medium
 )
 
 

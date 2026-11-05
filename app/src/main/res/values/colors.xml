@@ -3,10 +3,12 @@
     <color name="primary">#1B5E20</color>
     <color name="background">#EAF1EA</color>
     <color name="surface">#FFFFFF</color>
+    <color name="white">#FFFFFF</color>
 
     <color name="text_primary">#243328</color>
     <color name="text_secondary">#718071</color>
     <color name="text_white">#FFFFFF</color>
+    <color name="text_black">#000000</color>
     <color name="text_dark">#243328</color>
     <color name="text_muted">#718071</color>
 

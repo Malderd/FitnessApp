@@ -68,12 +68,13 @@ fun BookingScreen(
 
     Column(
         Modifier.fillMaxSize()
-            .padding(20.dp, vertical = 12.dp)
+            .padding(20.dp, vertical = 25.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(56.dp),
+                .height(56.dp)
+                .padding(vertical = 15.dp),
             contentAlignment = Alignment.Center
         ) {
             Text(
