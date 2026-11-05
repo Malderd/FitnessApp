@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.example.fitnessapp.R
 import com.example.fitnessapp.ui.theme.AuthBackStyle
 import com.example.fitnessapp.ui.theme.FitnessAppTheme
+import androidx.compose.foundation.background
 
 data class TrainingInfo(
     val id: Int,
@@ -68,6 +69,7 @@ fun BookingScreen(
 
     Column(
         Modifier.fillMaxSize()
+            .background(MaterialTheme.colorScheme.background)
             .padding(20.dp, vertical = 25.dp)
     ) {
         Box(
@@ -80,7 +82,7 @@ fun BookingScreen(
             Text(
                 text = stringResource(training.title),
                 style = MaterialTheme.typography.titleLarge,
-                color = colorResource(R.color.text_dark)
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             IconButton(
@@ -147,7 +149,7 @@ fun BookingScreen(
         Text(
             text = stringResource(R.string.booking_description),
             style = MaterialTheme.typography.titleLarge,
-            color = colorResource(R.color.text_dark)
+            color = MaterialTheme.colorScheme.onBackground
         )
 
         Spacer(modifier = Modifier.height(8.dp))
@@ -155,7 +157,7 @@ fun BookingScreen(
         Text(
             text = stringResource(training.description),
             style = MaterialTheme.typography.bodyLarge,
-            color = colorResource(R.color.text_dark)
+            color = MaterialTheme.colorScheme.onBackground
         )
 
         Spacer(modifier = Modifier.weight(1f))

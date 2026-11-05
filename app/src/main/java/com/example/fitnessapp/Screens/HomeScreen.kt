@@ -41,7 +41,7 @@ fun HomeScreen(
         Text(
             text = stringResource(R.string.home_greeting),
             style = HomeGreetingStyle,
-            color = colorResource(R.color.text_dark),
+            color = MaterialTheme.colorScheme.onBackground,
             modifier = Modifier.padding(top = 25.dp)
         )
 
@@ -74,7 +74,7 @@ fun HomeScreen(
             Text(
                 text = stringResource(R.string.home_upcoming_trainings),
                 style = HomeSectionTitleStyle,
-                color = colorResource(R.color.text_dark)
+                color = MaterialTheme.colorScheme.onBackground
             )
         }
         TrainingCard(
