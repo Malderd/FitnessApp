@@ -27,16 +27,7 @@
     <string name="home_greeting">Привет, Константин!</string>
     <string name="home_promo_title">Достигай большего\nс FitLife!</string>
     <string name="home_promo_subtitle">Тренируйся в удобном темпе</string>
-    <string name="home_upcoming_trainings">Ближайшие тренировки</string>
-    <string name="see_all">Все</string>
-
-    <string name="training_strength">Силовая тренировка</string>
-    <string name="training_strength_time">5 ноября • 18:00</string>
-    <string name="training_strength_room">Зал №1 • 5 мест</string>
-    <string name="training_yoga">Йога</string>
-    <string name="training_yoga_time">6 ноября • 09:00</string>
-    <string name="training_yoga_room">Зал №2 • 8 мест</string>
-    <string name="training_card_arrow">›</string>
+    <string name="home_upcoming_trainings">Ваши ближайшие тренировки</string>
 
     <string name="training_strength">Силовая тренировка</string>
     <string name="training_yoga">Йога</string>

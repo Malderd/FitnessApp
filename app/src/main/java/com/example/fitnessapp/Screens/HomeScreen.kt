@@ -35,7 +35,6 @@ import com.example.fitnessapp.ui.theme.HomeTitleStyle
 @Composable
 fun HomeScreen(
     onTrainingClick: (Int) -> Unit = {},
-    onSeeAll: () -> Unit = {},
     onNavigate: (String) -> Unit = {}
 ) {
     PageScaffold(currentRoute = Destination.Home.route, onNavigate = onNavigate) {
@@ -69,19 +68,14 @@ fun HomeScreen(
             }
         }
 
-        Row(Modifier
-            .fillMaxWidth()
-            .padding(top = 18.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween) {
+        Row(Modifier.fillMaxWidth()
+            .padding(top = 18.dp, bottom = 10.dp), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.SpaceBetween
+        ) {
             Text(
                 text = stringResource(R.string.home_upcoming_trainings),
                 style = HomeSectionTitleStyle,
                 color = colorResource(R.color.text_dark)
             )
-            TextButton(onClick = onSeeAll)
-            {
-                Text(stringResource(R.string.see_all),
-                    color = colorResource(R.color.primary))
-            }
         }
         TrainingCard(
             title = stringResource(R.string.training_strength),

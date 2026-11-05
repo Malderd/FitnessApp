@@ -45,7 +45,6 @@ fun AppNavHost(navController: NavHostController) {
                         Destination.Booking.createRoute(trainingId)
                     )
                 },
-                { navController.navigate(Destination.Schedule.route) },
                 { navController.goTopLevel(it) })
         }
 //        composable(Destination.Schedule.route) {
