@@ -50,4 +50,8 @@
     <string name="schedule_title">Расписание</string>
     <string name="schedule_trainings">Тренировки %1$s</string>
 
+    <string name="chat_title">ИИ-помощник</string>
+    <string name="chat_input_hint">Написать сообщение...</string>
+    <string name="chat_send_button">➤</string>
+
 </resources>
