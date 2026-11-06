@@ -34,16 +34,19 @@ fun PersonalDataScreen(
                 .fillMaxWidth()
                 .padding(top = 20.dp)
         ) {
-            ProfileSectionHeader(
-                icon = {
-                    Icon(
-                        imageVector = Icons.Default.PersonOutline,
-                        contentDescription = null,
-                        modifier = Modifier.size(48.dp),
-                        tint = colorResource(R.color.primary)
-                    )
-                },
-                title = stringResource(R.string.personal_data_header)
+            Icon(
+                imageVector = Icons.Default.PersonOutline,
+                contentDescription = null,
+                modifier = Modifier.size(48.dp),
+                tint = colorResource(R.color.primary)
+            )
+
+            Spacer(modifier = Modifier.height(12.dp))
+
+            Text(
+                text = stringResource(R.string.personal_data_header),
+                style = MaterialTheme.typography.titleLarge,
+                color = colorResource(R.color.text_primary)
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -78,18 +81,36 @@ fun SubscriptionsScreen(
         onNavigate = onNavigate,
         onBack = onBack
     ) {
-        ProfileEmptyState(
-            icon = {
-                Icon(
-                    imageVector = Icons.Default.CreditCard,
-                    contentDescription = null,
-                    modifier = Modifier.size(64.dp),
-                    tint = colorResource(R.color.primary)
-                )
-            },
-            title = stringResource(R.string.subscriptions_empty_title),
-            description = stringResource(R.string.subscriptions_empty_description)
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = Icons.Default.CreditCard,
+                contentDescription = null,
+                modifier = Modifier.size(64.dp),
+                tint = colorResource(R.color.primary)
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Text(
+                text = stringResource(R.string.subscriptions_empty_title),
+                style = MaterialTheme.typography.titleLarge,
+                color = colorResource(R.color.text_primary)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = stringResource(R.string.subscriptions_empty_description),
+                style = MaterialTheme.typography.bodyMedium,
+                color = colorResource(R.color.text_secondary)
+            )
+        }
     }
 }
 
@@ -105,18 +126,36 @@ fun VisitHistoryScreen(
         onNavigate = onNavigate,
         onBack = onBack
     ) {
-        ProfileEmptyState(
-            icon = {
-                Icon(
-                    imageVector = Icons.Default.History,
-                    contentDescription = null,
-                    modifier = Modifier.size(64.dp),
-                    tint = colorResource(R.color.primary)
-                )
-            },
-            title = stringResource(R.string.history_empty_title),
-            description = stringResource(R.string.history_empty_description)
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = Icons.Default.History,
+                contentDescription = null,
+                modifier = Modifier.size(64.dp),
+                tint = colorResource(R.color.primary)
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Text(
+                text = stringResource(R.string.history_empty_title),
+                style = MaterialTheme.typography.titleLarge,
+                color = colorResource(R.color.text_primary)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = stringResource(R.string.history_empty_description),
+                style = MaterialTheme.typography.bodyMedium,
+                color = colorResource(R.color.text_secondary)
+            )
+        }
     }
 }
 
@@ -132,18 +171,36 @@ fun NotificationsScreen(
         onNavigate = onNavigate,
         onBack = onBack
     ) {
-        ProfileEmptyState(
-            icon = {
-                Icon(
-                    imageVector = Icons.Default.NotificationsNone,
-                    contentDescription = null,
-                    modifier = Modifier.size(64.dp),
-                    tint = colorResource(R.color.primary)
-                )
-            },
-            title = stringResource(R.string.notifications_empty_title),
-            description = stringResource(R.string.notifications_empty_description)
-        )
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(horizontal = 16.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Icon(
+                imageVector = Icons.Default.NotificationsNone,
+                contentDescription = null,
+                modifier = Modifier.size(64.dp),
+                tint = colorResource(R.color.primary)
+            )
+
+            Spacer(modifier = Modifier.height(20.dp))
+
+            Text(
+                text = stringResource(R.string.notifications_empty_title),
+                style = MaterialTheme.typography.titleLarge,
+                color = colorResource(R.color.text_primary)
+            )
+
+            Spacer(modifier = Modifier.height(8.dp))
+
+            Text(
+                text = stringResource(R.string.notifications_empty_description),
+                style = MaterialTheme.typography.bodyMedium,
+                color = colorResource(R.color.text_secondary)
+            )
+        }
     }
 }
 
@@ -204,39 +261,5 @@ fun ProfileInfoItem(
                 color = colorResource(R.color.text_primary)
             )
         }
-    }
-}
-
-// Пустое состояние раздела
-@Composable
-fun ProfileEmptyState(
-    icon: @Composable () -> Unit,
-    title: String,
-    description: String
-) {
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(horizontal = 16.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-        icon()
-
-        Spacer(modifier = Modifier.height(20.dp))
-
-        Text(
-            text = title,
-            style = MaterialTheme.typography.titleLarge,
-            color = colorResource(R.color.text_primary)
-        )
-
-        Spacer(modifier = Modifier.height(8.dp))
-
-        Text(
-            text = description,
-            style = MaterialTheme.typography.bodyMedium,
-            color = colorResource(R.color.text_secondary)
-        )
     }
 }
