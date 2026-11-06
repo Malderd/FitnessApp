@@ -18,8 +18,4 @@
 
     <color name="light_green">#344B38</color>
     <color name="promo_green">#2E7D32</color>
-
-    <color name="schedule_border">#536457</color>
-    <color name="schedule_text">#E5EDE6</color>
-    <color name="schedule_muted">#A6B5AA</color>
 </resources>
