@@ -62,6 +62,7 @@ fun ProfileScreen(
                     Icon(
                         Icons.Default.PersonOutline,
                         stringResource(R.string.profile_personal_data_description),
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 },
                 onClick = {
@@ -75,6 +76,7 @@ fun ProfileScreen(
                     Icon(
                         Icons.Default.CreditCard,
                         stringResource(R.string.profile_subscriptions_description),
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 },
                 onClick = {
@@ -88,6 +90,7 @@ fun ProfileScreen(
                     Icon(
                         Icons.Default.History,
                         contentDescription = stringResource(R.string.profile_visit_history_description),
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 },
                 onClick = {
@@ -101,6 +104,7 @@ fun ProfileScreen(
                     Icon(
                         Icons.Default.NotificationsNone,
                         contentDescription = stringResource(R.string.profile_notifications_description),
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 },
                 onClick = {
@@ -114,6 +118,7 @@ fun ProfileScreen(
                     Icon(
                         Icons.Default.Logout,
                         contentDescription = stringResource(R.string.profile_logout_description),
+                        tint = MaterialTheme.colorScheme.primary
                     )
                 },
                 onClick = onLogout
@@ -144,15 +149,11 @@ fun ProfileMenuItem(
             verticalAlignment = Alignment.CenterVertically
         ) {
 
-            CompositionLocalProvider(
-                LocalContentColor provides MaterialTheme.colorScheme.primary
+            Box(
+                modifier = Modifier.size(32.dp),
+                contentAlignment = Alignment.Center
             ) {
-                Box(
-                    modifier = Modifier.size(32.dp),
-                    contentAlignment = Alignment.Center
-                ) {
-                    icon()
-                }
+                icon()
             }
 
             Spacer(modifier = Modifier.width(18.dp))
