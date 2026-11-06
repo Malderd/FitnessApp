@@ -1,10 +1,14 @@
 package com.example.fitnessapp.navigation
 
+import android.widget.Toast
+import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
 import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.navArgument
 import com.example.fitnessapp.Screens.BookingScreen
 import com.example.fitnessapp.Screens.ChatScreen
@@ -21,6 +25,22 @@ import com.example.fitnessapp.Screens.WelcomeScreen
 
 @Composable
 fun AppNavHost(navController: NavHostController) {
+    val context = LocalContext.current
+
+    val currentRoute = navController.currentBackStackEntryAsState()
+        .value?.destination?.route
+
+    BackHandler(
+        enabled = currentRoute == Destination.Home.route ||
+                currentRoute == Destination.Welcome.route
+    ) {
+        Toast.makeText(
+            context,
+            "Возврат назад невозможен",
+            Toast.LENGTH_SHORT
+        ).show()
+    }
+
     NavHost(navController, startDestination = Destination.Welcome.route) {
         composable(Destination.Welcome.route) {
             WelcomeScreen(
@@ -80,11 +100,12 @@ fun AppNavHost(navController: NavHostController) {
        }
 
        composable(Destination.Profile.route) {
-           ProfileScreen( {
-               navController.navigate(it)
-           },
+           ProfileScreen(
+               onNavigate = {
+                   navController.goTopLevel(it)
+                            },
                onLogout = {
-                   navController.navigate(Destination.Login.route) {
+                   navController.navigate(Destination.Welcome.route) {
                        popUpTo(Destination.Home.route) {
                            inclusive = true
                        }
@@ -125,8 +146,6 @@ fun AppNavHost(navController: NavHostController) {
 }
 private fun NavHostController.goTopLevel(route: String) {
     navigate(route) {
-        popUpTo(Destination.Home.route) { saveState = true }
         launchSingleTop = true
-        restoreState = true
     }
 }
