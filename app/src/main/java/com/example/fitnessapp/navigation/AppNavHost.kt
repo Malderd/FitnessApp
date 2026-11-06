@@ -67,13 +67,19 @@ fun AppNavHost(navController: NavHostController) {
                 { navController.popBackStack() },
                 { navController.navigate(Destination.Login.route)})
         }
+
         composable(Destination.Home.route) {
             HomeScreen(
                 { navController.navigate(
                         Destination.Booking.createRoute(it)
                     )
                 },
-                { navController.goTopLevel(it) })
+                {
+                    navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                }
+            )
         }
 
         composable(Destination.Schedule.route) {
@@ -82,7 +88,12 @@ fun AppNavHost(navController: NavHostController) {
                     Destination.Booking.createRoute(it)
                     )
                 },
-                { navController.goTopLevel(it) })
+                {
+                    navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                }
+            )
         }
 
         composable(Destination.Booking.route, arguments = listOf(navArgument("trainingId") { type = NavType.IntType })) { entry ->
@@ -95,15 +106,19 @@ fun AppNavHost(navController: NavHostController) {
         }
        composable(Destination.Chat.route) {
            ChatScreen {
-               navController.goTopLevel(it)
+               navController.navigate(it) {
+                   launchSingleTop = true
+               }
            }
        }
 
        composable(Destination.Profile.route) {
            ProfileScreen(
                onNavigate = {
-                   navController.goTopLevel(it)
-                            },
+                   navController.navigate(it) {
+                       launchSingleTop = true
+                   }
+               },
                onLogout = {
                    navController.navigate(Destination.Welcome.route) {
                        popUpTo(Destination.Home.route) {
@@ -117,35 +132,46 @@ fun AppNavHost(navController: NavHostController) {
 
         composable(Destination.PersonalData.route) {
             PersonalDataScreen(
-                onNavigate = { navController.goTopLevel(it) },
+                onNavigate = {
+                    navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                },
                 onBack = { navController.popBackStack() }
             )
         }
 
         composable(Destination.Subscriptions.route) {
             SubscriptionsScreen(
-                onNavigate = { navController.goTopLevel(it) },
+                onNavigate = {
+                    navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                },
                 onBack = { navController.popBackStack() }
             )
         }
 
         composable(Destination.VisitHistory.route) {
             VisitHistoryScreen(
-                onNavigate = { navController.goTopLevel(it) },
+                onNavigate = {
+                    navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                },
                 onBack = { navController.popBackStack() }
             )
         }
 
         composable(Destination.Notifications.route) {
             NotificationsScreen(
-                onNavigate = { navController.goTopLevel(it) },
+                onNavigate = {
+                    navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                },
                 onBack = { navController.popBackStack() }
             )
         }
-    }
-}
-private fun NavHostController.goTopLevel(route: String) {
-    navigate(route) {
-        launchSingleTop = true
     }
 }
