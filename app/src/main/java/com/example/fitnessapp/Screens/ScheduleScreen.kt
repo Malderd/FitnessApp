@@ -69,9 +69,9 @@ fun ScheduleScreen(
                         },
                     shape = RoundedCornerShape(14.dp),
                     color = if (isSelected) {
-                        colorResource(R.color.primary)
+                        MaterialTheme.colorScheme.primary
                     } else {
-                        colorResource(R.color.white)
+                        MaterialTheme.colorScheme.surface
                     },
                     shadowElevation = if (isSelected) 3.dp else 0.dp
                 ) {
@@ -82,9 +82,9 @@ fun ScheduleScreen(
                             text = day.label,
                             style = ScheduleDayStyle,
                             color = if (isSelected) {
-                                colorResource(R.color.text_white)
+                                MaterialTheme.colorScheme.onPrimary
                             } else {
-                                colorResource(R.color.text_black)
+                                MaterialTheme.colorScheme.onSurface
                             }
                         )
                     }
@@ -100,7 +100,7 @@ fun ScheduleScreen(
                 currentDay.fullDate
             ),
             style = ScheduleDateTitleStyle,
-            color = colorResource(R.color.text_black)
+            color = MaterialTheme.colorScheme.onBackground
         )
 
         Spacer(modifier = Modifier.height(16.dp))

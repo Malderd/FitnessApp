@@ -32,13 +32,14 @@ fun PersonalDataScreen(
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(top = 20.dp)
+                .padding(top = 20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Icon(
                 imageVector = Icons.Default.PersonOutline,
                 contentDescription = null,
                 modifier = Modifier.size(48.dp),
-                tint = colorResource(R.color.primary)
+                tint = MaterialTheme.colorScheme.primary
             )
 
             Spacer(modifier = Modifier.height(12.dp))
@@ -46,7 +47,7 @@ fun PersonalDataScreen(
             Text(
                 text = stringResource(R.string.personal_data_header),
                 style = MaterialTheme.typography.titleLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -92,7 +93,7 @@ fun SubscriptionsScreen(
                 imageVector = Icons.Default.CreditCard,
                 contentDescription = null,
                 modifier = Modifier.size(64.dp),
-                tint = colorResource(R.color.primary)
+                tint = MaterialTheme.colorScheme.primary
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -100,7 +101,7 @@ fun SubscriptionsScreen(
             Text(
                 text = stringResource(R.string.subscriptions_empty_title),
                 style = MaterialTheme.typography.titleLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -108,7 +109,7 @@ fun SubscriptionsScreen(
             Text(
                 text = stringResource(R.string.subscriptions_empty_description),
                 style = MaterialTheme.typography.bodyMedium,
-                color = colorResource(R.color.text_secondary)
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }
@@ -137,7 +138,7 @@ fun VisitHistoryScreen(
                 imageVector = Icons.Default.History,
                 contentDescription = null,
                 modifier = Modifier.size(64.dp),
-                tint = colorResource(R.color.primary)
+                tint = MaterialTheme.colorScheme.primary
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -145,7 +146,7 @@ fun VisitHistoryScreen(
             Text(
                 text = stringResource(R.string.history_empty_title),
                 style = MaterialTheme.typography.titleLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -153,7 +154,7 @@ fun VisitHistoryScreen(
             Text(
                 text = stringResource(R.string.history_empty_description),
                 style = MaterialTheme.typography.bodyMedium,
-                color = colorResource(R.color.text_secondary)
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }
@@ -182,7 +183,7 @@ fun NotificationsScreen(
                 imageVector = Icons.Default.NotificationsNone,
                 contentDescription = null,
                 modifier = Modifier.size(64.dp),
-                tint = colorResource(R.color.primary)
+                tint = MaterialTheme.colorScheme.primary
             )
 
             Spacer(modifier = Modifier.height(20.dp))
@@ -190,7 +191,7 @@ fun NotificationsScreen(
             Text(
                 text = stringResource(R.string.notifications_empty_title),
                 style = MaterialTheme.typography.titleLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(8.dp))
@@ -198,31 +199,9 @@ fun NotificationsScreen(
             Text(
                 text = stringResource(R.string.notifications_empty_description),
                 style = MaterialTheme.typography.bodyMedium,
-                color = colorResource(R.color.text_secondary)
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
-    }
-}
-
-// Заголовок раздела
-@Composable
-fun ProfileSectionHeader(
-    icon: @Composable () -> Unit,
-    title: String
-) {
-    Column(
-        modifier = Modifier.fillMaxWidth(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        icon()
-
-        Spacer(modifier = Modifier.height(12.dp))
-
-        Text(
-            text = title,
-            style = MaterialTheme.typography.titleLarge,
-            color = colorResource(R.color.text_primary)
-        )
     }
 }
 
@@ -238,7 +217,7 @@ fun ProfileInfoItem(
             .padding(vertical = 6.dp),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = colorResource(R.color.surface)
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 1.dp
@@ -250,7 +229,7 @@ fun ProfileInfoItem(
             Text(
                 text = title,
                 style = MaterialTheme.typography.bodySmall,
-                color = colorResource(R.color.text_secondary)
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(6.dp))
@@ -258,7 +237,7 @@ fun ProfileInfoItem(
             Text(
                 text = value,
                 style = MaterialTheme.typography.bodyLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onSurface
             )
         }
     }

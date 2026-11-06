@@ -35,6 +35,7 @@ import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.foundation.Image
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.fitnessapp.R
@@ -54,14 +55,14 @@ fun RegisterScreen(
     var password by remember { mutableStateOf("") }
 
     Box(
-        modifier = Modifier.fillMaxSize().background(colorResource(R.color.background)),
+        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center
     ) {
         Card(
             modifier = Modifier.fillMaxWidth().padding(20.dp),
             shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(
-                containerColor = colorResource(R.color.surface)
+                containerColor = MaterialTheme.colorScheme.surface
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 6.dp
@@ -79,7 +80,7 @@ fun RegisterScreen(
                     TextButton(onClick = onBack) {
                         Text(
                             text = stringResource(R.string.back),
-                            color = colorResource(R.color.text_primary),
+                            color = MaterialTheme.colorScheme.onSurface,
                             style = AuthBackStyle
                         )
                     }
@@ -95,13 +96,13 @@ fun RegisterScreen(
                 Text(
                     text = stringResource(R.string.register_title),
                     style = AuthTitleStyle,
-                    color = colorResource(R.color.text_primary)
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Text(
                     text = stringResource(R.string.register_subtitle),
                     style = AuthSubtitleStyle,
-                    color = colorResource(R.color.text_secondary)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
                 Spacer(modifier = Modifier.height(8.dp))
@@ -147,7 +148,8 @@ fun RegisterScreen(
                     modifier = Modifier.fillMaxWidth().height(52.dp),
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = colorResource(R.color.primary)
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
                     )
                 ) {
                     Text(

@@ -92,7 +92,7 @@ fun BookingScreen(
                 Icon(
                     imageVector = Icons.Default.ArrowBack,
                     contentDescription = stringResource(R.string.back),
-                    tint = colorResource(R.color.text_dark)
+                    tint = MaterialTheme.colorScheme.onBackground
                 )
             }
         }
@@ -170,7 +170,7 @@ fun BookingScreen(
                 .height(52.dp),
             shape = RoundedCornerShape(14.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = colorResource(R.color.primary)
+                containerColor = MaterialTheme.colorScheme.primary
             )
         ) {
             Text(
@@ -196,7 +196,7 @@ fun TrainingInfoRow(
             contentAlignment = Alignment.Center
         ) {
             CompositionLocalProvider(
-                LocalContentColor provides colorResource(R.color.primary)
+                LocalContentColor provides MaterialTheme.colorScheme.primary
             ) {
                 icon()
             }
@@ -207,7 +207,7 @@ fun TrainingInfoRow(
         Text(
             text = text,
             style = MaterialTheme.typography.bodyLarge,
-            color = colorResource(R.color.text_dark)
+            color = MaterialTheme.colorScheme.onBackground
         )
     }
 }

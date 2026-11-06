@@ -7,6 +7,7 @@ import androidx.compose.material.icons.filled.Chat
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
@@ -50,7 +51,7 @@ fun BottomNavigationBar(currentRoute: String?, onNavigate: (String) -> Unit) {
     )
 
     NavigationBar(
-        containerColor = colorResource(R.color.surface)
+        containerColor = MaterialTheme.colorScheme.surface
     ) {
         items.forEach { item ->
             NavigationBarItem(
@@ -62,10 +63,11 @@ fun BottomNavigationBar(currentRoute: String?, onNavigate: (String) -> Unit) {
                 },
                 label = { Text(text = stringResource(item.label)) },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = colorResource(R.color.primary),
-                    selectedTextColor = colorResource(R.color.primary),
-                    unselectedIconColor = colorResource(R.color.text_secondary),
-                    unselectedTextColor = colorResource(R.color.text_secondary)
+                    selectedIconColor = MaterialTheme.colorScheme.primary,
+                    selectedTextColor = MaterialTheme.colorScheme.primary,
+                    unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
+                    indicatorColor = MaterialTheme.colorScheme.secondaryContainer
                 )
             )
         }

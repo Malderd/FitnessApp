@@ -55,7 +55,7 @@ fun PageScaffold(
     content: @Composable ColumnScope.() -> Unit
 ) {
     Scaffold(
-        containerColor = colorResource(R.color.background),
+        containerColor = MaterialTheme.colorScheme.background,
         topBar = { if (title != null) {
             TopAppBar(
                 title = {
@@ -75,7 +75,11 @@ fun PageScaffold(
                         }
                     }
                 },
-                colors = TopAppBarDefaults.topAppBarColors(containerColor = colorResource(R.color.background))
+                colors = TopAppBarDefaults.topAppBarColors(
+                    containerColor = MaterialTheme.colorScheme.background,
+                    titleContentColor = MaterialTheme.colorScheme.onBackground,
+                    navigationIconContentColor = MaterialTheme.colorScheme.onBackground
+                )
             )
         } },
         bottomBar = { BottomNavigationBar(currentRoute, onNavigate) }
@@ -90,7 +94,7 @@ fun TrainingCard(title: String, time: String, room: String, image: Painter, onCl
         modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = colorResource(R.color.surface)
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 3.dp
@@ -116,26 +120,26 @@ fun TrainingCard(title: String, time: String, room: String, image: Painter, onCl
                 Text(
                     text = title,
                     style = TrainingTitleStyle,
-                    color = colorResource(R.color.text_dark)
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Text(
                     text = time,
                     style = TrainingDetailsStyle,
-                    color = colorResource(R.color.text_muted)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
                 Text(
                     text = room,
                     style = TrainingDetailsStyle,
-                    color = colorResource(R.color.text_muted)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
             }
 
             Text(
                 text = stringResource(R.string.training_card_arrow),
                 style = TrainingArrowStyle,
-                color = colorResource(R.color.primary)
+                color = MaterialTheme.colorScheme.primary
             )
         }
     }

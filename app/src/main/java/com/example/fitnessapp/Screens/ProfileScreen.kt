@@ -37,13 +37,13 @@ fun ProfileScreen(
                 imageVector = Icons.Default.AccountCircle,
                 contentDescription = stringResource(R.string.profile_avatar_description),
                 modifier = Modifier.padding(5.dp).size(100.dp),
-                tint = colorResource(R.color.primary)
+                tint = MaterialTheme.colorScheme.primary
             )
 
             Text(
                 text = stringResource(R.string.profile_name),
                 style = MaterialTheme.typography.titleLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onBackground
             )
 
             Spacer(modifier = Modifier.height(4.dp))
@@ -51,7 +51,7 @@ fun ProfileScreen(
             Text(
                 text = stringResource(R.string.profile_email),
                 style = MaterialTheme.typography.bodyMedium,
-                color = colorResource(R.color.text_secondary)
+                color = MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             Spacer(modifier = Modifier.height(28.dp))
@@ -133,7 +133,7 @@ fun ProfileMenuItem(
         modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp),
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(
-            containerColor = colorResource(R.color.surface)
+            containerColor = MaterialTheme.colorScheme.surface
         ),
         elevation = CardDefaults.cardElevation(
             defaultElevation = 1.dp
@@ -145,7 +145,7 @@ fun ProfileMenuItem(
         ) {
 
             CompositionLocalProvider(
-                LocalContentColor provides colorResource(R.color.primary)
+                LocalContentColor provides MaterialTheme.colorScheme.primary
             ) {
                 Box(
                     modifier = Modifier.size(32.dp),
@@ -161,13 +161,13 @@ fun ProfileMenuItem(
                 text = title,
                 modifier = Modifier.weight(1f),
                 style = MaterialTheme.typography.bodyLarge,
-                color = colorResource(R.color.text_primary)
+                color = MaterialTheme.colorScheme.onSurface
             )
 
             Icon(
                 imageVector = Icons.Default.ChevronRight,
                 contentDescription = null,
-                tint = colorResource(R.color.text_secondary)
+                tint = MaterialTheme.colorScheme.onSurfaceVariant
             )
         }
     }

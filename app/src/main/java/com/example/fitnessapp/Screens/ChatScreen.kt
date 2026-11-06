@@ -22,7 +22,17 @@ fun ChatScreen(
     val messages = remember { mutableStateListOf("Привет! Я — фитнес-помощник FitLife. Чем могу помочь?", "Какая тренировка подойдёт новичку?", "Для начала рекомендую йогу, пилатес или лёгкие функциональные тренировки.") }
     PageScaffold(stringResource(R.string.chat_title), Destination.Chat.route, onNavigate) {
         LazyColumn(Modifier.weight(1f).fillMaxWidth(), verticalArrangement = Arrangement.spacedBy(10.dp)) {
-            items(messages) { text -> Surface(color = colorResource(R.color.surface), shape = MaterialTheme.shapes.large) { Text(text, Modifier.padding(12.dp)) } }
+            items(messages)
+            { text ->
+                Surface(
+                    color = MaterialTheme.colorScheme.surface,
+                    shape = MaterialTheme.shapes.large
+                ) {
+                    Text(
+                        text,
+                        Modifier.padding(12.dp))
+                }
+            }
         }
         Row(Modifier.fillMaxWidth().padding(vertical = 8.dp),
             horizontalArrangement = Arrangement.spacedBy(8.dp)

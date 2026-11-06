@@ -49,13 +49,13 @@ fun HomeScreen(
             .fillMaxWidth()
             .padding(top = 18.dp),
             shape = RoundedCornerShape(18.dp),
-            colors = CardDefaults.cardColors(containerColor = colorResource(R.color.promo_green))
+            colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.primary)
         ) {
             Column(Modifier.padding(20.dp)) {
                 Text(
                     text = stringResource(R.string.home_promo_title),
                     style = HomeTitleStyle,
-                    color = colorResource(R.color.text_white)
+                    color = MaterialTheme.colorScheme.onPrimary
                 )
 
                 Spacer(modifier = Modifier.height(5.dp))
@@ -63,7 +63,7 @@ fun HomeScreen(
                 Text(
                     text = stringResource(R.string.home_promo_subtitle),
                     style = HomeSubtitleStyle,
-                    color = colorResource(R.color.text_white)
+                    color = MaterialTheme.colorScheme.onPrimary
                 )
             }
         }
