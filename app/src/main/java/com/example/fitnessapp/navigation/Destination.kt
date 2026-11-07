@@ -9,6 +9,12 @@ sealed class Destination(val route: String) {
     data object Booking : Destination("booking/{trainingId}") {
         fun createRoute(id: Int) = "booking/$id"
     }
+
+    data object SubscriptionCatalog : Destination("subscription_catalog")
+
+    data object SubscriptionDetails : Destination("subscription_details/{subscriptionId}") {
+        fun createRoute(id: Int) = "subscription_details/$id"
+    }
     data object Chat : Destination("chat")
     data object Profile : Destination("profile")
     data object PersonalData : Destination("personal_data")

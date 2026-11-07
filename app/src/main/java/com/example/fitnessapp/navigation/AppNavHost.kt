@@ -19,6 +19,8 @@ import com.example.fitnessapp.Screens.PersonalDataScreen
 import com.example.fitnessapp.Screens.ProfileScreen
 import com.example.fitnessapp.Screens.RegisterScreen
 import com.example.fitnessapp.Screens.ScheduleScreen
+import com.example.fitnessapp.Screens.SubscriptionCatalogScreen
+import com.example.fitnessapp.Screens.SubscriptionDetailsScreen
 import com.example.fitnessapp.Screens.SubscriptionsScreen
 import com.example.fitnessapp.Screens.VisitHistoryScreen
 import com.example.fitnessapp.Screens.WelcomeScreen
@@ -96,7 +98,13 @@ fun AppNavHost(navController: NavHostController) {
             )
         }
 
-        composable(Destination.Booking.route, arguments = listOf(navArgument("trainingId") { type = NavType.IntType })) { entry ->
+        composable(Destination.Booking.route,
+            arguments = listOf(navArgument("trainingId")
+            {
+                type = NavType.IntType
+            }
+            )
+        ) { entry ->
             BookingScreen(
                 entry.arguments?.getInt("trainingId"),
                 { navController.popBackStack() },
@@ -104,6 +112,38 @@ fun AppNavHost(navController: NavHostController) {
                     navController.navigate(Destination.Schedule.route) { popUpTo(Destination.Home.route) }
                 })
         }
+
+        composable(Destination.SubscriptionCatalog.route) {
+            SubscriptionCatalogScreen(
+                { navController.navigate(
+                        Destination.SubscriptionDetails.createRoute(it)
+                    )
+                },
+                { navController.navigate(it) {
+                        launchSingleTop = true
+                    }
+                }
+            )
+        }
+
+        composable(Destination.SubscriptionDetails.route,
+            arguments = listOf(
+                navArgument("subscriptionId") {
+                    type = NavType.IntType
+                }
+            )
+        ) { entry ->
+            SubscriptionDetailsScreen(
+                subscriptionId = entry.arguments?.getInt("subscriptionId"),
+                onBack = {
+                    navController.popBackStack()
+                },
+                onPurchase = { plan ->
+                    // Здесь позже будет логика покупки абонемента
+                }
+            )
+        }
+
        composable(Destination.Chat.route) {
            ChatScreen {
                navController.navigate(it) {

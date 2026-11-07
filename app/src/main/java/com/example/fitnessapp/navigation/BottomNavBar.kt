@@ -4,6 +4,7 @@ import androidx.annotation.StringRes
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CalendarMonth
 import androidx.compose.material.icons.filled.Chat
+import androidx.compose.material.icons.filled.CreditCard
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material3.Icon
@@ -16,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.sp
 import com.example.fitnessapp.R
 
 
@@ -37,6 +39,11 @@ fun BottomNavigationBar(currentRoute: String?, onNavigate: (String) -> Unit) {
             route = Destination.Schedule.route,
             label = R.string.nav_schedule,
             icon = Icons.Default.CalendarMonth
+        ),
+        BottomNavItem(
+            route = Destination.SubscriptionCatalog.route,
+            label = R.string.nav_subscriptions,
+            icon = Icons.Default.CreditCard
         ),
         BottomNavItem(
             route = Destination.Chat.route,
@@ -61,12 +68,10 @@ fun BottomNavigationBar(currentRoute: String?, onNavigate: (String) -> Unit) {
                     Icon(imageVector = item.icon,
                         contentDescription = stringResource(item.label))
                 },
-                label = { Text(text = stringResource(item.label)) },
+                label = { Text(text = stringResource(item.label), fontSize = 11.sp) },
                 colors = NavigationBarItemDefaults.colors(
                     selectedIconColor = MaterialTheme.colorScheme.primary,
-                    selectedTextColor = MaterialTheme.colorScheme.primary,
                     unselectedIconColor = MaterialTheme.colorScheme.onSurfaceVariant,
-                    unselectedTextColor = MaterialTheme.colorScheme.onSurfaceVariant,
                     indicatorColor = MaterialTheme.colorScheme.secondaryContainer
                 )
             )
