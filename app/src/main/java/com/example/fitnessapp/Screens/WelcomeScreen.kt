@@ -14,11 +14,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
@@ -30,6 +32,10 @@ import com.example.fitnessapp.R
 import com.example.fitnessapp.ui.theme.WelcomeButtonStyle
 import com.example.fitnessapp.ui.theme.WelcomeSubtitleStyle
 import com.example.fitnessapp.ui.theme.WelcomeTitleStyle
+
+
+private val WelcomeGreen = Color(0xFF1B5E20)
+private val WelcomeWhite = Color.White
 
 @Composable
 fun WelcomeScreen(
@@ -49,7 +55,8 @@ fun WelcomeScreen(
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(colorResource(R.color.welcome_overlay).copy(alpha = 0.5f))
+                .background(Color.Black.copy(alpha = 0.5f)
+                )
         )
 
         Column(
@@ -70,7 +77,7 @@ fun WelcomeScreen(
             Text(
                 text = stringResource(R.string.welcome_title),
                 style = WelcomeTitleStyle,
-                color = colorResource(R.color.text_white)
+                color = WelcomeWhite
             )
 
             Spacer(Modifier.height(5.dp))
@@ -78,7 +85,7 @@ fun WelcomeScreen(
             Text(
                 text = stringResource(R.string.welcome_subtitle),
                 style = WelcomeSubtitleStyle,
-                color = colorResource(R.color.text_white)
+                color = WelcomeWhite
             )
 
             Spacer(Modifier.height(50.dp))
@@ -87,8 +94,8 @@ fun WelcomeScreen(
                 onLogin, Modifier.fillMaxWidth().height(52.dp),
                 shape = RoundedCornerShape(14.dp),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = colorResource(R.color.primary),
-                    contentColor = colorResource(R.color.text_white)
+                    containerColor = WelcomeGreen,
+                    contentColor = WelcomeWhite
                 )
             )
             {
@@ -101,12 +108,16 @@ fun WelcomeScreen(
 
             OutlinedButton(
                 onRegister, Modifier.fillMaxWidth().height(52.dp),
-                shape = RoundedCornerShape(14.dp)
+                shape = RoundedCornerShape(14.dp),
+                colors = ButtonDefaults.outlinedButtonColors(
+                    containerColor = Color.Transparent,
+                    contentColor = WelcomeWhite
+                ),
             )
             {
                 Text(text = stringResource(R.string.register_button),
                     style = WelcomeButtonStyle,
-                    color = colorResource(R.color.text_white)
+                    color = WelcomeWhite
                 )
             }
         }

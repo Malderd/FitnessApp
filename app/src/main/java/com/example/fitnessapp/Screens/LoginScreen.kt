@@ -18,6 +18,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
@@ -43,7 +44,6 @@ import com.example.fitnessapp.ui.theme.AuthButtonStyle
 import com.example.fitnessapp.ui.theme.AuthBackStyle
 @Composable
 fun LoginScreen(
-    onBack: () -> Unit = {},
     onLoginSuccess: () -> Unit = {},
     onRegister: () -> Unit = {}
 ) {
@@ -51,14 +51,14 @@ fun LoginScreen(
     var password by remember { mutableStateOf("") }
 
     Box(
-        modifier = Modifier.fillMaxSize().background(colorResource(R.color.background)),
+        modifier = Modifier.fillMaxSize().background(MaterialTheme.colorScheme.background),
         contentAlignment = Alignment.Center
     ) {
         Card(
             modifier = Modifier.fillMaxWidth().padding(20.dp),
             shape = RoundedCornerShape(24.dp),
             colors = CardDefaults.cardColors(
-                containerColor = colorResource(R.color.surface)
+                containerColor = MaterialTheme.colorScheme.surface
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = 6.dp
@@ -69,19 +69,6 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 verticalArrangement = Arrangement.spacedBy(12.dp)
             ) {
-                Box(
-                    modifier = Modifier.fillMaxWidth(),
-                    contentAlignment = Alignment.CenterStart
-                ) {
-                    TextButton(onClick = onBack) {
-                        Text(
-                            text = stringResource(R.string.back),
-                            color = colorResource(R.color.text_primary),
-                            style = AuthBackStyle
-                        )
-                    }
-                }
-
                 Image(
                     painter = painterResource(R.drawable.dumbbell_logo),
                     contentDescription = stringResource(
@@ -93,13 +80,13 @@ fun LoginScreen(
                 Text(
                     text = stringResource(R.string.login_title),
                     style = AuthTitleStyle,
-                    color = colorResource(R.color.text_primary)
+                    color = MaterialTheme.colorScheme.onSurface
                 )
 
                 Text(
                     text = stringResource(R.string.login_subtitle),
                     style = AuthSubtitleStyle,
-                    color = colorResource(R.color.text_secondary)
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
                 )
 
                 Spacer(Modifier.height(8.dp))
@@ -129,7 +116,8 @@ fun LoginScreen(
                     onClick = onLoginSuccess, modifier = Modifier.fillMaxWidth().height(52.dp),
                     shape = RoundedCornerShape(14.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = colorResource(R.color.primary)
+                        containerColor = MaterialTheme.colorScheme.primary,
+                        contentColor = MaterialTheme.colorScheme.onPrimary
                     )
                 ) {
                     Text(
@@ -141,12 +129,12 @@ fun LoginScreen(
                 TextButton(onClick = onRegister) {
                     Text(
                         text = stringResource(R.string.login_no_account),
-                        color = colorResource(R.color.text_secondary)
+                        color = MaterialTheme.colorScheme.onSurfaceVariant
                     )
 
                     Text(
                         text = " " + stringResource(R.string.register_button),
-                        color = colorResource(R.color.primary)
+                        color = MaterialTheme.colorScheme.primary
                     )
                 }
             }

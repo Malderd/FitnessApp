@@ -19,4 +19,83 @@
     <string name="register_subtitle">Создайте аккаунт</string>
     <string name="register_name">ФИО</string>
 
+    <string name="nav_home">Главная</string>
+    <string name="nav_schedule">Расписание</string>
+    <string name="nav_chat">ИИ-чат</string>
+    <string name="nav_profile">Профиль</string>
+
+    <string name="home_greeting">Привет, Константин!</string>
+    <string name="home_promo_title">Достигай большего\nс FitLife!</string>
+    <string name="home_promo_subtitle">Тренируйся в удобном темпе\nАдрес: Невский проспект 13к1\nВремя работы: 9:00 - 21:00</string>
+    <string name="home_upcoming_trainings">Ваши ближайшие тренировки</string>
+
+    <string name="training_strength">Силовая тренировка</string>
+    <string name="training_yoga">Йога</string>
+    <string name="training_strength_time">5 ноября  18:00</string>
+    <string name="training_yoga_time">6 ноября  09:00</string>
+    <string name="training_strength_room">Зал №1  5 мест</string>
+    <string name="training_yoga_room">Зал №2  8 мест</string>
+    <string name="training_card_arrow">›</string>
+    <string name="booking_strength_room">Зал №1</string>
+    <string name="booking_yoga_room">Зал №2</string>
+    <string name="training_strength_trainer">Алексей Смирнов</string>
+    <string name="training_yoga_trainer">Тренер уточняется</string>
+    <string name="training_strength_description">Эффективная тренировка для развития силы и выносливости.</string>
+    <string name="training_yoga_description">Спокойная тренировка для развития гибкости, баланса и расслабления.</string>
+
+    <string name="booking_description">Описание</string>
+    <string name="booking_button">Записаться</string>
+    <string name="booking_trainer_prefix">Тренер: %1$s</string>
+
+    <string name="schedule_title">Расписание</string>
+    <string name="schedule_trainings">Тренировки %1$s</string>
+
+    <string name="nav_subscriptions">Абонементы</string>
+
+    <string name="subscription_catalog_title">Абонементы</string>
+    <string name="subscription_catalog_description">Выберите подходящий абонемент</string>
+    <string name="subscription_more_details">Подробнее →</string>
+
+    <string name="subscription_details_title">Информация об абонементе</string>
+    <string name="subscription_duration">Срок действия</string>
+    <string name="subscription_workouts_count">Количество занятий</string>
+    <string name="subscription_features_title">Что входит в абонемент</string>
+    <string name="subscription_price_title">Стоимость абонемента</string>
+    <string name="subscription_buy_button">Купить за %1$d ₽</string>
+    <string name="subscription_not_found">Абонемент не найден</string>
+
+    <string name="chat_title">ИИ-помощник</string>
+    <string name="chat_input_hint">Написать сообщение...</string>
+    <string name="chat_send_button">➤</string>
+
+    <string name="profile_title">Профиль</string>
+    <string name="profile_name">Константин Куликов</string>
+    <string name="profile_email">Kosty-k1980@list.ru</string>
+    <string name="profile_personal_data">Личные данные</string>
+    <string name="profile_subscriptions">Мои абонементы</string>
+    <string name="profile_visit_history">История посещений</string>
+    <string name="profile_notifications">Уведомления</string>
+    <string name="profile_logout">Выйти из аккаунта</string>
+    <string name="profile_avatar_description">Аватар пользователя</string>
+    <string name="profile_personal_data_description">Иконка личных данных</string>
+    <string name="profile_subscriptions_description">Иконка абонементов</string>
+    <string name="profile_visit_history_description">Иконка истории посещений</string>
+    <string name="profile_notifications_description">Иконка уведомлений</string>
+    <string name="profile_logout_description">Иконка выхода из аккаунта</string>
+
+    <string name="personal_data_header">Информация о пользователе</string>
+    <string name="personal_data_name">ФИО</string>
+    <string name="personal_data_email">Электронная почта</string>
+    <string name="personal_data_phone">Номер телефона</string>
+    <string name="personal_data_phone_empty">Не указан</string>
+
+    <string name="subscriptions_empty_title">У вас пока нет абонементов</string>
+    <string name="subscriptions_empty_description">Здесь будут отображаться ваши активные абонементы и информация об их сроке действия.</string>
+
+    <string name="history_empty_title">История пока пуста</string>
+    <string name="history_empty_description">Здесь будут отображаться ваши посещения фитнес-центров и тренировок.</string>
+
+    <string name="notifications_empty_title">Уведомлений пока нет</string>
+    <string name="notifications_empty_description">Здесь будут появляться сообщения о тренировках, бронированиях и обновлениях.</string>
+
 </resources>

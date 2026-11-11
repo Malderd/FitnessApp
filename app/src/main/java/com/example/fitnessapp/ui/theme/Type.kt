@@ -67,3 +67,51 @@ val AuthBackStyle = TextStyle(
     fontSize = 14.sp,
     fontWeight = FontWeight.Normal
 )
+
+val HomeGreetingStyle = TextStyle(
+    fontSize = 24.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val HomeTitleStyle = TextStyle(
+    fontSize = 23.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val HomeSubtitleStyle = TextStyle(
+    fontSize = 14.sp,
+    fontWeight = FontWeight.Normal
+)
+
+val HomeSectionTitleStyle = TextStyle(
+    fontSize = 19.sp,
+    fontWeight = FontWeight.Bold
+)
+
+val TrainingTitleStyle = TextStyle(
+    fontSize = 16.sp,
+    fontWeight = FontWeight.Medium
+)
+
+val TrainingDetailsStyle = TextStyle(
+    fontSize = 13.sp,
+    fontWeight = FontWeight.Normal
+)
+
+val TrainingArrowStyle = TextStyle(
+    fontSize = 28.sp,
+    fontWeight = FontWeight.Normal
+)
+
+val ScheduleDateTitleStyle = TextStyle(
+    fontSize = 18.sp,
+    fontWeight = FontWeight.SemiBold
+)
+
+val ScheduleDayStyle = TextStyle(
+    fontSize = 15.sp,
+    fontWeight = FontWeight.Medium
+)
+
+
+
